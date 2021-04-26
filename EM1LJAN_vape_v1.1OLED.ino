@@ -2,6 +2,7 @@
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
     Переделанная прошивка GyverMOD v1.2 под OLED дисплей 128x32 px  
   исходник: GyverMOD https://github.com/AlexGyver/GyverMOD
+    ВНИМАНИЕ! ПРОШИВКА ПОД ВЕРТИКАЛЬНУЮ ОРИЕНТАЦИЮ ДИСПЛЕЯ
     При первом запуске initial_calibration должен быть равен 1 (строка №30)
   При подключении и открытии монитора порта будет запущен процесс калибровки.
   Вам нужно при помощи вольтметра измерить напряжение на пинах 5V и GND,
@@ -32,7 +33,7 @@
 #include <EEPROMex.h>   // библиотека для работы со внутренней памятью ардуино
 #include <LowPower.h>   // библиотека сна
 //--------------НАСТРОЙКИ--------------------
-#define DCDC_Boster 1  // 0 - не используем, 1 - используем повышайку 
+#define DCDC_Booster 1  // 0 - не используем, 1 - используем повышайку 
 #define sleep_timer  30  // время в секундах, автоотключение
 #define initial_calibration 0 // 0 - выкл, 1 - вкл (калибровка)
 #define battery_low 2.8 // нижний порог напряжения акб
@@ -993,7 +994,7 @@ void setup(void) {
   //----читаем из памяти-----
 
   Timer1.initialize(1500); 
-  u8g.setRot90();
+  u8g.setRot90();   //повернуть на 90 градусов
   
   menu_redraw_required = 1; 
   //ИНИЦИАЛИЗИРУЕМ КНОПКИ
@@ -1337,21 +1338,17 @@ void updateMenu(void) {
 //----------------ПЕРЕМЕЩЕНИЕ СТРОКИ------------------
 //-----------------ОТРИСОВКА ПРИ ВКЛЮЧЕНИИ-------------------
 void draw(byte b) {
-    if(b == 0){
+    if(b == 0 || b ==4){
      u8g.drawXBM( 0, 50, u8g_logo_width, u8g_logo_height, one);
     }
-    else if (b == 2){
+    else if (b == 1 || b == 3){
       u8g.drawXBMP( 0, 50, u8g_logo_width, u8g_logo_height, three);
     }
     else if (b == 2){
       u8g.drawXBMP( 0, 50, u8g_logo_width, u8g_logo_height, four);
     }
-    else if(b == 3){
-     // u8g.drawXBMP( 0, 50, u8g_logo_width, u8g_logo_height, five);
-    }
-    else if (b == 4){
-      u8g.drawXBMP( 0, 50, u8g_logo_width, u8g_logo_height, seven);
-    }
+    
+    
 }
 //-----------------ОТРИСОВКА ПРИ ВКЛЮЧЕНИИ-------------------
 //-----------------------ИНДИКАТОР ЗАРЯДА--------------------------
@@ -1466,7 +1463,7 @@ long readVcc() { //функция чтения внутреннего опорн
   uint8_t low  = ADCL; // must read ADCL first - it then locks ADCH
   uint8_t high = ADCH; // unlocks both
   long result = (high << 8) | low;
-  if(DCDC_Boster == 1){
+  if(DCDC_Booster == 1){
     result = (my_vcc_const * 1023 * 1000 / result)*analogRead(battery)/1023;// переделанный метод для измерения напряжения на акб,          
                                                                       //короче говоря U = (battery/1023)*K где K=[4.5В - 5.2В];K = напряжение питания, поскольку питаем от повышайки
   }else{
