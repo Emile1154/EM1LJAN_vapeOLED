@@ -1,4 +1,4 @@
-# переделанная прошивка GyverMOD под OLED дисплей на 128x32 px
+# Переделанная прошивка GyverMOD под OLED дисплей на 128x32px
 
 ## исходник: GyverMOD https://github.com/AlexGyver/GyverMOD
 
@@ -19,10 +19,10 @@
 https://sourceforge.net/projects/image2code/files/image2code/VERSION-1.1/Image2Code-1.1.zip/download
 подробнее здесь:
 https://www.youtube.com/watch?v=S8cbIllYc1I&ab_channel=HomeMade-%D0%A2%D0%BE%2C%D1%87%D1%82%D0%BE%D1%82%D1%8B%D0%BC%D0%BE%D0%B6%D0%B5%D1%88%D1%8C%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C
-  схема для 1 батареи:
+  *схема для 1 батареи:
 
 ![схема для 1 батареи](https://user-images.githubusercontent.com/42141666/116052270-e574b880-a692-11eb-8482-33b0947dc1dc.jpg)
 
-  схема для 2 батарей:
+  *схема для 2 батарей:
 
 ![схема для 2 батареи](https://user-images.githubusercontent.com/42141666/116052293-ea396c80-a692-11eb-854f-c7d6e7365bb3.jpg)
