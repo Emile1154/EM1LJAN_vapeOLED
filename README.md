@@ -24,9 +24,9 @@
 * battery_low 2.8  - нижний порог напряжения акб
 * vape_threshold 7 - макс. время затяжки в секундах
 
-** программа для конвертации изображений в массив:
+**программа для конвертации изображений в массив:** 
 https://sourceforge.net/projects/image2code/files/image2code/VERSION-1.1/Image2Code-1.1.zip/download
-** подробнее здесь:
+**подробнее здесь:**
 https://www.youtube.com/watch?v=S8cbIllYc1I&ab_channel=HomeMade-%D0%A2%D0%BE%2C%D1%87%D1%82%D0%BE%D1%82%D1%8B%D0%BC%D0%BE%D0%B6%D0%B5%D1%88%D1%8C%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C
   * схема для 1 батареи:
 
