@@ -34,7 +34,7 @@
 #include <LowPower.h>   // библиотека сна
 //--------------НАСТРОЙКИ--------------------
 #define DCDC_Booster 1  // 0 - не используем, 1 - используем повышайку 
-#define sleep_timer  30  // время в секундах, автоотключение
+#define sleep_timer  45  // время в секундах, автоотключение
 #define initial_calibration 0 // 0 - выкл, 1 - вкл (калибровка)
 #define battery_low 2.8 // нижний порог напряжения акб
 #define vape_threshold 7 // макс. время затяжки в секундах
