@@ -32,9 +32,11 @@ https://sourceforge.net/projects/image2code/files/image2code/VERSION-1.1/Image2C
 https://www.youtube.com/watch?v=S8cbIllYc1I&ab_channel=HomeMade-%D0%A2%D0%BE%2C%D1%87%D1%82%D0%BE%D1%82%D1%8B%D0%BC%D0%BE%D0%B6%D0%B5%D1%88%D1%8C%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C
   * схема для 1 батареи:
 
-![схема для 1 батареи](https://user-images.githubusercontent.com/42141666/116061336-2c1ae080-a69c-11eb-853c-6632d998b191.jpg)
+![схема для 1 батареи](https://user-images.githubusercontent.com/42141666/116065839-dc8ae380-a6a0-11eb-88e4-ebc7a425dece.jpg)
+
 
 
   * схема для 2 батарей:
 
-![схема для 2 батареи](https://user-images.githubusercontent.com/42141666/116052293-ea396c80-a692-11eb-854f-c7d6e7365bb3.jpg)
+![схема для 2 батареи](https://user-images.githubusercontent.com/42141666/116065858-e1e82e00-a6a0-11eb-8417-55d252e10c34.jpg)
+
