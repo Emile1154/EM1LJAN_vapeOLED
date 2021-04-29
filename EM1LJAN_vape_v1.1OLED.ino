@@ -75,8 +75,8 @@ float my_vcc_const;
 
 float ohms;
 float volts;
-byte watt;
-byte maxW;
+short watt;
+uint8_t maxW;
 boolean downClick;
 boolean upClick;
 boolean setClick;
@@ -85,7 +85,6 @@ byte menu_current = 0;
 boolean menu_redraw_required = true;
 boolean up, down, setB, fire;
 
-boolean n = false;
 U8GLIB_SSD1306_128X32 u8g(U8G_I2C_OPT_NONE);	// I2C / TWI 
 #define u8g_logo_width 32
 #define u8g_logo_height 32
@@ -1012,6 +1011,7 @@ void setup(void) {
   
   bat_vol = readVcc();
   bat_old = bat_vol;
+  
   // проверка заряда акума, если разряжен то прекратить работу
   if (bat_vol < battery_low * 1000) {
     flag = 0;
@@ -1092,7 +1092,6 @@ void loop() {
           if(!setB && setClick){
             setClick = 0;
           }
-          
     }
     //--------------------------------ВАРИВОЛЬТ-----------------------------------------
     //---------------------------------------------ВАРИВАТТ-------------------------------------------------------
@@ -1140,7 +1139,7 @@ void loop() {
           }while(u8g.nextPage());
           if(up && !upClick){
             ohms += 0.05;
-            ohms = min(ohms, 1.5);
+            ohms = min(ohms, 2);
             upClick=1;
           }
           if(!up && upClick){
@@ -1175,10 +1174,6 @@ void loop() {
               vape_mode = 1;            // первичное нажатие
               delay(20);                // анти дребезг (сделал по-тупому, лень)
               vape_press = millis();    // первичное нажатие
-            }
-            if (vape_release_count == 1) {
-              vape_mode = 2;               // двойное нажатие
-              delay(20);                   // анти дребезг (сделал по-тупому, лень)
             }
             if (millis() - vape_press > vape_threshold * 1000) {  // "таймер затяжки"
               vape_mode = 0;
@@ -1288,34 +1283,10 @@ void uiStep(void) {
     }
   }
   if (up || down || setB || fire) wake_timer = millis(); // обновлять таймер при  нажатии любой кнопки
-  /*
-  uiKeyCodeSecond = uiKeyCodeFirst;
-  if ( !digitalRead(FIRE) )
-    uiKeyCodeFirst = KEY_FIRE;
-  else if ( !digitalRead(UP))
-    uiKeyCodeFirst = KEY_NEXT;
-  else if ( !digitalRead(DOWN))
-    uiKeyCodeFirst = KEY_PREV;
-  else if ( !digitalRead(SET))
-    uiKeyCodeFirst = KEY_SET;
-  else 
-    uiKeyCodeFirst = KEY_NONE;
-  
-  if ( uiKeyCodeSecond == uiKeyCodeFirst )
-    uiKeyCode = uiKeyCodeFirst;
-  else
-    uiKeyCode = KEY_NONE;
-  */
 }
 //----------------СЧИТЫВАНИЕ КНОПОК----------------
 //----------------ПЕРЕМЕЩЕНИЕ СТРОКИ------------------
 void updateMenu(void) {
-  /*
-  if ( uiKeyCode != KEY_NONE && last_key_code == uiKeyCode ) {
-    return;
-  }
-  last_key_code = uiKeyCode;
-  */
   if(mode == 3){                            //только если находимся в меню
     switch ( uiKeyCode ) {                          
     case KEY_PREV:
@@ -1356,7 +1327,7 @@ void drawBattery(){
   u8g.setFont(u8g_font_helvB08);   //ставим шрифт
   u8g.setPrintPos(5,115);           //ставим положение
   u8g.print((float)bat_volt_f/1000); //пишем напряжение на батареи 
-  if(analogRead(vievChardge) < 1020){     //если зарядка не подключена, то
+  if(analogRead(vievChardge) < 900){     //если на входе зарядки меньше 4,5 В
     carefulB = false;                    // разрешить парить
     if(bat_volt_f >= 3850){                  // если напряжение больше 3,85В рисовать полную батарею
       u8g.drawXBMP(2, 118, 23, 10, bat100);    
@@ -1374,7 +1345,7 @@ void drawBattery(){
       u8g.drawXBMP(2, 118, 23, 10, bat0);
     }
   }
-  else{                           //если зарядка подключена
+  else{                           //если на входе зарядки 4,5 и более вольт
     carefulB = true;                 //запрет на парение
     u8g.drawXBMP(2, 118, 23, 10, charge);      // рисовать зарядку
   }
