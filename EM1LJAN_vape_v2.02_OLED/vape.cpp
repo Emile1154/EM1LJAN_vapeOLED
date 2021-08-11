@@ -114,12 +114,12 @@ void Vape::voltMenu(){
     Vape::check();
     drawable.voltDraw();
     if(rightButton.click()){
-      Vape::volts += 0.1;                   // увеличить на 0,1В
+      Vape::volts += 0.1;                   
       Vape::volts = min(Vape::volts, (float)Vape::currentVoltage/1000);  //ограничение сверху
       Vape::changeV = true;
     }
     if(leftButton.click()){
-      Vape::volts -= 0.1;             // уменьшить на 0,1В 
+      Vape::volts -= 0.1;             
       Vape::volts = max(Vape::volts, 0);    // ограничение снизу
       Vape::changeV = true;
     }
@@ -185,7 +185,7 @@ void Vape::check(){
      while(true){
         voltage.currentVoltage();
         Voltages::calculateMaxWatt();
-        if (Vape::currentVoltage > battery_low * 1000) {               // если напряжение меньше минимального
+        if (Vape::currentVoltage > battery_low * 1000) {               // если напряжение больше минимального
             break;
         }
         digitalWrite(mosfet, LOW);    // принудительно отключить койл   
