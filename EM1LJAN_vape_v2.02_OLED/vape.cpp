@@ -27,12 +27,12 @@ static Voltages voltage;
 void Vape::smoke(){
   static uint32_t vape_press; 
   static boolean vape_btt;
-	static float PWM_filter_k = 0.1;
+  static float PWM_filter_k = 0.1;
   static short PWM, PWM_f, PWM_old = 800;           // хранит PWM сигнал
   Externalizable::writeExternal();
   vape_press = millis();
-	while(!Vape::wake_up_flag & !Vape::carefulLithium & !Button::cutoff){
-        check();      
+  while(!Vape::wake_up_flag & !Vape::carefulLithium & !Button::cutoff){
+        Vape::check();      
         if (millis() - vape_press > vape_threshold * 1000 || !fireButton.hold()) {  // "таймер затяжки"
               digitalWrite(mosfet, 0);
               Button::cutoff = true; // отсечка
