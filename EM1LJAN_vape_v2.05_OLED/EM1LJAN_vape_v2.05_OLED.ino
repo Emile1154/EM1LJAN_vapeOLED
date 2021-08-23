@@ -47,7 +47,7 @@ int main(void){
   vape.run();
   
   
-  while(Vape::wake_up_flag){ // fix this
+  while(Vape::wake_up_flag){ 
     
     vape.wake_puzzle();  
     
