@@ -47,6 +47,9 @@
  
 * информация:
 ![info](https://user-images.githubusercontent.com/42141666/132029978-fa2703da-5cfb-406f-8272-794e4f07dc79.jpg)
+ 
+* игра  flappy bird:
+![flappy bird](https://user-images.githubusercontent.com/42141666/132034748-d959209b-2f73-4d7a-9cab-3ad6f5aa4789.jpg)
 
 
 **программа для конвертации изображений в массив:** 
