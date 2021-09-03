@@ -32,6 +32,23 @@
 * initial_calibration 0 - выкл, 1 - вкл (калибровка)
 * lowBrightTimer  время в секундах за которое диспелей потускнеет прежде чем отключиться 
 
+
+![vape](https://user-images.githubusercontent.com/42141666/132029994-230cbe05-203b-4c43-b7d8-a6ba3e14a48e.jpg)
+
+
+* меню:
+![menu](https://user-images.githubusercontent.com/42141666/132029898-19e61d16-1524-4856-973d-34bcc036c7fb.jpg)
+
+* вкладка вариватт:
+![vw](https://user-images.githubusercontent.com/42141666/132029937-713fb162-0e8b-42d8-9f4e-43b5e49f9129.jpg)
+ 
+* меню настроек:
+![settings](https://user-images.githubusercontent.com/42141666/132029962-ce9e564b-bab1-438e-a1ee-cc41e1ee6e0c.jpg)
+ 
+* информация:
+![info](https://user-images.githubusercontent.com/42141666/132029978-fa2703da-5cfb-406f-8272-794e4f07dc79.jpg)
+
+
 **программа для конвертации изображений в массив:** 
 https://javl.github.io/image2cpp/
 **подробнее здесь:**
