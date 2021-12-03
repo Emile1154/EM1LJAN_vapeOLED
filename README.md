@@ -66,4 +66,9 @@ https://www.youtube.com/watch?v=S8cbIllYc1I&ab_channel=HomeMade-%D0%A2%D0%BE%2C%
   * схема для 2 батарей:
 
 ![схема для 2 батареи](https://user-images.githubusercontent.com/42141666/116374416-b0e63580-a827-11eb-8c8c-34a30092c5ac.jpg)
+* PCB:
+* Bottom layout:
+[bottom_lay.pdf](https://github.com/Emile1154/EM1LJAN_vapeOLED/files/7649899/bottom_lay.pdf)
+* Top layout:
+[top_lay.pdf](https://github.com/Emile1154/EM1LJAN_vapeOLED/files/7649902/top_lay.pdf)
 
