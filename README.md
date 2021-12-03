@@ -68,11 +68,12 @@ https://www.youtube.com/watch?v=S8cbIllYc1I&ab_channel=HomeMade-%D0%A2%D0%BE%2C%
 ![схема для 2 батареи](https://user-images.githubusercontent.com/42141666/116374416-b0e63580-a827-11eb-8c8c-34a30092c5ac.jpg)
 
 * PCB:
-** Bottom layout: **
+
+**Bottom layout:**
 
 ![bottom_lay](https://user-images.githubusercontent.com/42141666/144609716-8d786d04-b5c4-482b-a3bb-b1aae5afb0d2.jpg)
 
-** Top layout: **
+**Top layout:**
 
 ![top_lay](https://user-images.githubusercontent.com/42141666/144609702-9f587aa6-af82-4af2-b94f-7943aae239d6.jpg)
 
