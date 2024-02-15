@@ -5,6 +5,9 @@ static void Externalizable::readExternal(){
   Vape::watt = EEPROM.readByte(2);
   Vape::ohms = EEPROM.readFloat(4);
   Vape::my_vcc_const = EEPROM.readFloat(8);
+  if( Vape::my_vcc_const == 0){
+     Vape::my_vcc_const = 1.1; // set default k
+  }
   for (byte i = 0; i <= 3; i++)
   {
     if(EEPROM.readFloat(12+4*i) > 1){  // if not empty 
